@@ -25,7 +25,7 @@ If you don't have one already, you will need an instance of Node-RED.
 #### IBM cloud
 If you are going to be using IBM Cloud, then create either an instance of [The Node-RED Starter](https://ibm.biz/BdZC7L) 
 
-#### Your own machine
+#### (Optional) Your own machine
 If you are going to be running on your own machine, then let's do this properly.
 1. Install nvm
 2. Use nvm to install Node.js (Verson 6 a minimum)
@@ -52,7 +52,6 @@ You will need some additional nodes in this workshop. Use `Manage Palette` to in
 * node-red-contrib-file-buffer
 * node-red-contrib-http-multipart
 * node-red-contrib-extract-keyframes
-
 
 ## Components
 You are now ready to build the basic components that you will be using in your application.
