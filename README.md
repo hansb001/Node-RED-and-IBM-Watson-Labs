@@ -7,10 +7,9 @@ This page is originally made by Emma Dawson and Soheel Chughtai for INDEX 2018 (
 
 All the Watson APIs are available on Node-RED. In this session I will show you how you can make use of the full capabilities of the APIs to create cognitive models and quickly make use of them in real applications with little coding.
 
-##The workshop
+## The workshop
 
 In this workshop I will guide you as you build a web application making use of several Watson APIS. You will start by constructing basic components, which you will then assemble into parts, which you will then assemble into an application. We start simple and gradually build a more intricate flow. 
----
 
 ## Getting Started
 You will need and instance of Node-RED to start this workshop. This can be an instance running on IBM Cloud, or on your own machine, or on any other platform that Node-RED supports, for example a Rasberry Pi.
