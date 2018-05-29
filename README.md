@@ -1,6 +1,6 @@
-# Node-RED-and-IBM-Watson-Labs
-In these labs, you learn the basics of using IBM Watson API's in Node-RED
+# Friday Coffee & Code: Develop an IoT app with Watson & Node Red, June 1, 2018
 
+In this workshop, you learn the basics of using IBM Watson API's in Node-RED
 
 This page is originally made by Emma Dawson and Soheel Chughtai for INDEX 2018 (https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
 
