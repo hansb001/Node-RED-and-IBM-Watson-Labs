@@ -2,10 +2,10 @@
 
 In this workshop, you learn the basics of using IBM Watson API's in Node-RED
 
-This page is originally made by Emma Dawson and Soheel Chughtai for INDEX 2018 (https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
+This workshop is originally made by Emma Dawson and Soheel Chughtai for INDEX 2018 (https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
 
 
-All the Watson APIs are available on Node-RED. In this session I will show you how you can make use of the full capabilities of the APIs to create cognitive models and quickly make use of them in real applications with little coding.
+All the Watson API's are available on Node-RED. In this session I will show you how you can make use of the full capabilities of the API's to create cognitive models and quickly make use of them in real applications with little coding.
 
 ## The workshop
 
@@ -15,15 +15,13 @@ In this workshop I will guide you as you build a web application making use of s
 You will need and instance of Node-RED to start this workshop. This can be an instance running on IBM Cloud, or on your own machine, or on any other platform that Node-RED supports, for example a Rasberry Pi.
 I will demonstrate how to create a Node-RED instance on IBM Cloud
 
-You will also need credentials for Watson services, which you can obtain using your IBM Cloud account. These will only be good for the day of the workshop, and only given to those attending the workshop.
-
-Here you can find the credentials. These will only be good for the day of the workshop, and only given to those attending the workshop.
+You will also need credentials for Watson services, which you can obtain using your IBM Cloud account. Because of time constraints, I will provide the credentials. You can find them [here](https://github.com/hansb001/Node-RED-and-IBM-Watson-Labs/blob/master/credentials). These credentials will only be good for the day of the workshop, and only given to those attending the workshop.
 
 ### Node-RED
 If you don't have one already, you will need an instance of Node-RED.
 
 #### IBM cloud
-If you are going to be using IBM Cloud, then create either an instance of [The Node-RED Starter](https://ibm.biz/BdZC7L) 
+If you are going to be using IBM Cloud, then create either an instance of [The Node-RED Starter](https://ibm.biz/BdZC7L). I will demonstrate this.
 
 #### (Optional) Your own machine
 If you are going to be running on your own machine, then let's do this properly.
@@ -39,7 +37,7 @@ You are going to be making use of the following Watson services.
 * Speech To Text
 * Text To Speech
 * Visual Recognition
-* Conversation
+* Assistant (Conversation)
 
 If you are running on Node-RED, feel free to bind in those services into your instance. For the workshop you don't have to provision them, I created those services and the credentials can be found here
 
@@ -70,39 +68,37 @@ You can also use Node-RED [Context](https://nodered.org/docs/writing-functions#s
 
 The neural translation models all use English, but you can wire two translation nodes to go from for example *Japanese* to *French*. Wire two translation nodes to use English as a hop. Use the global context to determine how your translation initial source and final destination. You will need to add a function node between the two translation nodes.
 
-### Speech In
-Create a new Node-RED tab. Drop a microphone node, delay node and play audio node onto the flow canvas. Wire the microphone to the delay to the play audio. Configure the delay node to delay for 5 seconds. Trigger the microphone node, and hear yourself speaking. This will gauge the quality of your microphone. If it is undecipherable then use a better quality microphone.
+### Speech to Text
+Create a new Node-RED tab. Drop a microphone node, delay node and play audio node onto the flow canvas. Wire the microphone to the delay to the play audio. Configure the delay node to delay for 5 seconds. Trigger the microphone node, and hear yourself speaking. This will gauge the quality of your microphone. If it is undecipherable then use a better quality microphone. In most cases the microphone of the laptop is sufficient.
 
 Add a Watson Speech to Text node to your flow. Wire the microphone to the Speech to Text node to a debug node. Configure the Speech to Text node for your language. Trigger the microphone and check the transcription.
 
 The Speech to Text node can be dynamically configured by setting `msg.srclang`. Use a function node and the global context to switch the language setting for the Speech to Text node.
 
-Wire the `Speech In` component to the `Translation` component to get a translation.
+Wire the `Speech To Text` component to the `Translation` component to get a translation.
 
-### Speech out
+### Text to Speech
 Create a new Node-RED tab. Drop an inject node, Watson Text to Speech node and a play audio node onto the flow canvas. Wire the inject node to the Text to Speech node to the play audio node. Configure the Text to Speech for language and voice. Configure the inject node to send a string. Trigger the inject node to hear the text.
 
-The Text to Speech node can be dynamically configured by setting msg.voice. Open the developer console on your browser. In the developer console enter tts.voice. You will see a list of the valid options for voice. Pick a voice and making use of a function node dynamically configure the voice for the speech to text node.
+The Text to Speech node can be dynamically configured by setting msg.voice. 
 
-Change the flow such that the voice setting for the Speech to Text node is determined by the Node-RED context.
-
-Wire the `Translation` component to the `Speech Out` component so that you can now hear the translation.
+Wire the `Translation` component to the `Text To Speech` component so that you can now hear the translation.
 
 ### Visual Recognition
 Create a new Node-RED tab. Drop a camera node, Watson Visual Recognition and a debug node on to the flow canvas. Wire the camera node to the Visual Recognition node to the debug node. Trigger the camera to take a selfie and see the output in the debug node.
 
-### Conversation
-For this you will need a Conversation workspace. If you don't have one, we will provide a prebuilt Conversation that you can import into your Conversation instance.
+### Assistant (Conversation)
+For this you will need a Assistant workspace. This is a demo workspace around Customer service. For instance, you can ask questions around opening hours and directions to the shop. 
 
-Create a new Node-RED tab. Drop an inject node, Watson Conversation node and a debug node onto the flow canvas. Configure the Watson Conversation node for your Conversation Workspace. Also pick the option that allows the Conversation node to manage the conversation context object.
+Create a new Node-RED tab. Drop an inject node, Watson Assistant node and a debug node onto the flow canvas. Configure the Watson Conversation node for the Conversation Workspace. 
 
 Use the inject node to send in text, and the debug node to see the response.
 
-Connect the `Speech In` component into the `Conversation` component to allow you to speak to your Conversation. Connect the `Speech Out` component to hear the response from the Conversation. Connect the `Translation` component to allow you to converse with the service in another language.
+Connect the `Speech To Text` component into the `Assistant` component to allow you to speak to your Conversation. Connect the `Text to Speech` component to hear the response from the Conversation. Connect the `Translation` component to allow you to converse with the service in another language.
 
 Add the `Visual Recognition` component to recognise you and start the conversation accordingly.
 
-This is now your `Working Conversation` part.
+This is now your `Working Assistant` part.
 
 ## HTML Components
 Upto now your application has been confined to the Node-RED flow editor. You will now build components that will make your application available as a web page.
@@ -112,47 +108,4 @@ Create a new Node-RED tab. Drop a HTTP In node, a Template node and a HTTP Out n
 
 Open a new browser tab and test your *hello world* web page.
 
-### HTML REST API
-Edit the template node to add in a button and javascript that will retrieve some text from a REST API.
-
-Add a new HTTP In node, a function node and a new HTTP Out node. This will act as your REST API. Edit the function node to return some text.
-
-Feel free to make use of the HTTP REST implementation in the [Assistant basic example](https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples/watson_assistant) as a guide
-
-### HTML Translator
-Edit the template node to display an input text field. Modify the javascript to send the input to the REST API. Modify the REST API to accept the field. Add the `Translate` component to translate the entered text and send the translation back to the web page.
-
-### HTML Conversation
-Modify your REST API to send text to your `Working Conversation` part, and return the response back to your web page. Modify the template and javascript to show a history of the chat.
-
-Your application should start to resemble the [Assisitant basic example](https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples/watson_assistant).
-
-### HTML Voice In
-Use [our sample flow](https://github.com/ibm-early-programs/watson-speech-sockets) to create a flow that will allow you to speak into your web page.
-
-Combine with your `HTML Conversation` component to accept speech as input.
-
-Feel free to make use of the Feel free to make use of the [dictaphone starter kit example](https://github.com/watson-developer-cloud/node-red-labs/blob/master/starter-kits/dictaphone/README.md) as a guide.
-
-### HTML Voice out
-Use our sample flow to create a flow that will allow you to listen to audio generated by the Speech to Text node, on your web page.
-
-Combine with your `HTML Conversation` component to listen to the response from your conversation.
-
-Make use of the [audio starter kit example](https://github.com/watson-developer-cloud/node-red-labs/blob/master/starter-kits/text_to_speech_audio/README.md) as a guide.
-
-### HTML Camera In
-Use our sample flow to create a flow that will allow you to send a picture captured by your web page to your application.
-
-Combine with your `HTML Conversation` component to recognise you.
-
-Make use of the [selfie description starter kit example](https://github.com/watson-developer-cloud/node-red-labs/blob/master/starter-kits/selfie_description/README.md) and [the sample flow from Node-RED flows](https://flows.nodered.org/flow/982d5f1450bde431820c486e7d57be11) as guides.
-
-## Application
-You final application will be a combination of the parts that you have constructed.
-
-The application will render a web page, that takes a photograph to recognise you, and start a conversation appropriately.
-
-For the Speech to Speech (with translation) component you can use the [bablfish starter kit example](https://github.com/watson-developer-cloud/node-red-labs/blob/master/starter-kits/babelfish/README.md) as a guide.
-
-It will allow you to configure your input and output language which can be different. You will be able to speak in your chosen input language and hear the conversation response in your chosen output language.
+If there is time left you can have a look at these [basic samples]https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples around all the Watson Api's and here are more [advanced labs](https://github.com/watson-developer-cloud/node-red-labs/tree/master/advanced_examples) where different Watson API's are combined to make more advanced applications.
