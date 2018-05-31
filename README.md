@@ -2,7 +2,7 @@
 
 In this workshop, you learn the basics of using IBM Watson API's in Node-RED
 
-This workshop is originally made by Emma Dawson and Soheel Chughtai for [INDEX 2018] (https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
+This workshop is originally made by Emma Dawson and Soheel Chughtai for [INDEX 2018](https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
 
 
 All the Watson API's are available on Node-RED. In this session I will show you how you can make use of the full capabilities of the API's to create cognitive models and quickly make use of them in real applications with little coding.
@@ -60,7 +60,7 @@ Take an inject node and wire it into a debug node. Configure the Inject node to 
 ### Translation
 Add a Watson Translator node in between the inject and debug node. Configure the Translator node to use neural translation and pick a language. Trigger the inject to see the translation.
 
-You can use the flows on the [language translator basic example]https://github.com/watson-developer-cloud/node-red-labs/blob/master/basic_examples/language_translator/README.md as a guide.
+You can use the flows on the [language translator basic example](https://github.com/watson-developer-cloud/node-red-labs/blob/master/basic_examples/language_translator/README.md) as a guide.
 
 It is possible to dynamically configure the Watson Translation node, by setting `msg.srclang` and `msg.destlang`. Node-RED [function nodes](https://nodered.org/docs/writing-functions) allow you to add snippets of javascript into the flow. Add a function node upstream of the Translation node and set the source and destination language in the function node.
 
@@ -108,4 +108,4 @@ Create a new Node-RED tab. Drop a HTTP In node, a Template node and a HTTP Out n
 
 Open a new browser tab and test your *hello world* web page.
 
-If there is time left you can have a look at these [basic samples]https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples around all the Watson Api's and here are more [advanced labs]https://github.com/watson-developer-cloud/node-red-labs/tree/master/advanced_examples where different Watson API's are combined to make more advanced applications.
+If there is time left you can have a look at these [basic samples](https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples) around all the Watson Api's and here are more [advanced labs](https://github.com/watson-developer-cloud/node-red-labs/tree/master/advanced_examples) where different Watson API's are combined to make more advanced applications.
