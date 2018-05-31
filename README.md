@@ -9,7 +9,7 @@ All the Watson APIs are available on Node-RED. In this session I will show you h
 
 ## The workshop
 
-In this workshop I will guide you as you build a web application making use of several Watson APIS. You will start by constructing basic components, which you will then assemble into parts, which you will then assemble into an application. We start simple and gradually build a more intricate flow. 
+In this workshop I will guide you as you build a web application making use of several Watson API's. You will start by constructing basic components, which you will then assemble into parts, which you will then assemble into an application. We start simple and gradually build a more intricate flow. 
 
 ## Getting Started
 You will need and instance of Node-RED to start this workshop. This can be an instance running on IBM Cloud, or on your own machine, or on any other platform that Node-RED supports, for example a Rasberry Pi.
