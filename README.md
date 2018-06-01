@@ -2,7 +2,7 @@
 
 In this workshop, you learn the basics of using IBM Watson API's in Node-RED
 
-This workshop matererial is innitially made by Emma Dawson and Soheel Chughtai for [INDEX 2018](https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
+This workshop material is initially made by Emma Dawson and Soheel Chughtai for [INDEX 2018](https://github.com/watson-developer-cloud/node-red-labs/tree/master/index_2018)
 
 
 All the Watson API's are available on Node-RED. In this session I will show you how you can make use of the full capabilities of the API's to create cognitive models and quickly make use of them in real applications with little coding.
