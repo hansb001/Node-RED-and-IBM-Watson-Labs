@@ -39,7 +39,7 @@ You are going to be making use of the following Watson services.
 * Visual Recognition
 * Assistant (Conversation)
 
-If you are running on Node-RED, feel free to bind in those services into your instance. For the workshop you don't have to provision them, I created those services and the credentials can be found here
+If you are running on Node-RED, feel free to bind in those services into your instance. For the workshop you don't have to provision them, I created those services and the credentials can be found [here](https://github.com/hansb001/Node-RED-and-IBM-Watson-Labs/blob/master/credentials).
 
 If you have Node-RED running on your own machine, then use `Manage Palette` to install the nodes.
 
